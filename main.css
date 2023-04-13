@@ -7,21 +7,24 @@
 
 body {
     font-family: Arial, Helvetica, sans-serif;
-    background-color:  rgb(159, 140, 81);
+    background-color: #837e6a;
 }
 
 .container {
     margin: 80px auto;
     max-width: 640px;
     width: 100%;
+    border: 1px solid #837e6a;
+    padding: 50px 40px 30px;
 }
 
 form {
-    margin-top: 40px;
+    margin: 40px auto;
+    max-width: 600px;
 }
 
 input {
-    border: rgb(131, 106, 33);
+    border: #fff8dc;
     border-radius: 6px;
     background-color: rgb(220, 213, 191);
 }
@@ -44,6 +47,8 @@ button {
     font-size: 18px;
     font-style: normal;
     cursor: pointer;
+    max-width: 200px;
+    margin: 18px auto;
 }
 
 h1 {
@@ -52,6 +57,14 @@ h1 {
 
 button:hover {
     background-color: #31815d;
+}
+
+.container:hover {
+    border: 1px solid #deb887;
+}
+
+#valor-deposito {
+    margin: 14px 0;
 }
 
 #btn-reset {
