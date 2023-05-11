@@ -1,39 +1,44 @@
-const form = document.getElementById('form-deposito');
-const numeroConta = document.getElementById('numero-conta');
-const valorDeposito = document.getElementById('valor-deposito');
+const form = document.getElementById('form');
+const nomeBeneficiario = document.getElementById('nome-beneficiario');
+let formEValido = false;
 
 
-function validaNumeros(numA, numB) {
-    return numB > numA;
-    }
+function validaNome(nomeCompleto) {
+    const nomeArray = nomeCompleto.split(' ');
+    return nomeArray.length >= 2;
+}
 
 form.addEventListener('submit', function(e) {
     e.preventDefault();
 
-    const mensagemSucesso = `Deposito feito com sucesso`
-    formEValido = validaNumeros(numeroConta.valueAsNumber, valorDeposito.valueAsNumber)
-    if(formEValido) {
-        const containerMensagemSucesso = document.querySelector('.success-message');
+    const numeroConta = document.getElementById('numero-conta')
+    const deposito = document.getElementById('deposito')
+    const mensagemSucesso = `O valor de: <b>${deposito.value}</b> foi depositado na conta <b>${numeroConta.value}</b>`;
+
+    formEValido = validaNome(nomeBeneficiario.value)
+    if (formEValido) {
+        const containerMensagemSucesso = document.querySelector('.success');
         containerMensagemSucesso.innerHTML = mensagemSucesso;
-        containerMensagemSucesso.style.display = 'block';
-        document.querySelector('.error-message').style.display = 'none';
-        numeroConta.style.border = 'none';
+        containerMensagemSucesso.style.display = 'block'
+
+        nomeBeneficiario.value = '';
+        numeroConta.value = '';
+        deposito.value = '';
     } else {
-        numeroConta.style.border = '1px solid red';
-        document.querySelector('.error-message').style.display = 'block';
+        nomeBeneficiario.style.border = '1px solid red'
+        document.querySelector('.error').style.display = 'block';
     }
 })
 
-numeroConta.addEventListener('keyup', function(e){
+nomeBeneficiario.addEventListener('keyup', function(e) {
     console.log(e.target.value);
-    formEValido = validaNumeros(numeroConta.valueAsNumber, valorDeposito.valueAsNumber)
+    formEValido = validaNome(e.target.value);
 
-    if(!formEValido) {
-        numeroConta.style.border = '1px solid red';
-        document.querySelector('.error-message').style.display = 'block';
-        document.querySelector('.success-message').style.display = 'none';
+    if (!formEValido) {
+        nomeBeneficiario.classList.add('erro')
+        document.querySelector('.error').style.display = 'block';
     } else {
-        numeroConta.style.border = '';
-        document.querySelector('.success-message').style.display = 'none';
+        nomeBeneficiario.classList.remove('erro')
+        document.querySelector('.error').style.display = 'none';
     }
-});
+})

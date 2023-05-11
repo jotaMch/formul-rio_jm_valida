@@ -1,115 +1,108 @@
-*{
-    margin: 0;
+* {
     padding: 0;
+    margin: 0;
     box-sizing: border-box;
-    font-family: sans-serif;
-}
-
-body {
-    font-family: Arial, Helvetica, sans-serif;
-    background-color: #837e6a;
+    font-family: Roboto, sans-serif;
 }
 
 .container {
-    margin: 80px auto;
-    max-width: 640px;
+    margin: 100px auto;
+    max-width: 480px;
     width: 100%;
-    border: 1px solid #837e6a;
-    padding: 50px 40px 30px;
+    background-color: #a4a4a4;
+    padding: 30px 40px;
+    border-radius: 8px;
 }
 
-form {
-    margin: 40px auto;
-    max-width: 600px;
+.container:hover {
+    border: 2px solid green;
+}
+
+body {
+    background-color: #b1aeae;
+}
+
+header {
+    background-color: #009432;
+}
+
+h1 {
+    padding: 12px 0;
+    color: #ccc;
+    text-transform: uppercase;
+    font-weight: bold;
+    text-align: center;
+    margin: 0 auto;
+}
+
+h2 {
+    text-align: center;
+    color: #413939;
+}
+
+#form {
+    padding: 20px 0;
 }
 
 input {
-    border: #fff8dc;
-    border-radius: 6px;
-    background-color: rgb(220, 213, 191);
+    font-weight: bold;
+    border: none;
+    outline: none;
+    background-color: transparent;
+    border-bottom: 2px solid #212121;
+    border-radius: 2px;
+}
+
+label {
+    font-weight: bold;
 }
 
 input, button {
-    border: none;
     display: block;
-    padding: 8px;
-    margin-bottom: 8px;
+    padding: 10px;
+    margin-bottom: 14px;
     width: 100%;
     resize: none;
 }
 
 button {
-    background-color: #185e3c;
-    border-radius: 8px;
-    text-transform: uppercase;
-    color: #fff;
+    border: none;
+    background-color: #1a7b42;
+    color: #ccc;
     font-weight: bold;
-    font-size: 18px;
-    font-style: normal;
     cursor: pointer;
-    max-width: 200px;
-    margin: 18px auto;
+    max-width: 150px;
+    margin: 0 auto;
+    border-radius: 4px;
+    text-transform: uppercase;
 }
 
-h1 {
+input[type=number]::-webkit-inner-spin-button { 
+    -webkit-appearance: none;
+    
+}
+
+.success {
+    background-color: #27ae60;
+    color: #ccc;
+    padding: 12px;
+    border-radius: 4px;
+    display: none;
     text-align: center;
 }
 
-button:hover {
-    background-color: #31815d;
-}
-
-.container:hover {
-    border: 1px solid #deb887;
-}
-
-#valor-deposito {
-    margin: 14px 0;
-}
-
-#btn-reset {
-    background-color: rgb(112, 46, 46);
-}
-
-.success-message {
+.error {
+    font-size: 10px;
+    background-color: rgba(157, 1, 1, 0.925);
+    color: #ccc;
     margin-bottom: 8px;
-    border-radius: 8px;
-    background-color: #31815d;
-    padding: 16px;
-    color: #fff;
+    border-radius: 1.6px;
+    padding: 2px;
     display: none;
 }
 
-.error-message {
-    font-size: 12px;
-    padding: 8px;
-    background-color: rgb(76, 5, 5);
-    color: #fff;
-    border-radius: 8px;
-    margin-bottom: 8px;
-    display: none;
-}
-
-@media screen and (max-width: 767px) {
-    .container {
-        width: 80%;
-    }
-
-    h1 {
-        text-align: center;
-        font-weight: bold;
-        font-size: 24px;
-    }
-
-    button {
-        padding: 2;
-        margin: 18px auto;
-        max-width: 180px;
-    }
-
-    .success-message {
-        padding: 10px 50px;
-        color: #fff;
-        display: none;
-    }
+input.erro {
+    color: red;
+    border-color: red;
+    outline-color: red;
 }

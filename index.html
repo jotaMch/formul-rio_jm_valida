@@ -1,28 +1,29 @@
 <!DOCTYPE html>
-<html lang="pt-br">
+<html lang="pt-BR">
 <head>
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>HTML com JS</title>
-    <link rel="stylesheet" href="./main.css" />
+    <title>testando comhecimmento</title>
+    <link rel="stylesheet" href="main.css">
 </head>
 <body>
+    <header>
+        <h1>Banking</h1>
+    </header>
     <div class="container">
-            <h1>Formulario de deposito</h1>
-        <form id="form-deposito">
-                <input type="number" id="numero-conta" required placeholder="numA" />
-                <p class="error-message" id="error">
-                    o valor precisa ser menor do que o numberB
-                </p>
-                <input type="number" id="valor-deposito" required placeholder="numB" />
-                <button id="btn-depositar" type="submit">Depositar</button>
+        <h2>Formulário de deposito</h2>
+        <form id="form">
+            <input type="text" id="nome-beneficiario" required placeholder="Nome completo do Beneficiario">
+            <p class="error">
+                O nome precisa ser completo
+            </p>
+            <input type="number" id="numero-conta" required placeholder="Numero da conta">
+            <input type="number" id="deposito" required placeholder="Valor">
+            <button type="submit" id="btn-depositar">Despositar</button>
         </form>
-        <p class="success-message"> 
-            Deposito feito com sucesso
-        </p>
+        <p class="success"></p>
     </div>
     <script src="./main.js"></script>
 </body>
 </html>
-
